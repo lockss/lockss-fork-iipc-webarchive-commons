@@ -220,7 +220,7 @@ public class ArchiveReaderFactory implements ArchiveFileConstants {
         }
        
         String scheme = u.getProtocol();
-        if (scheme.startsWith("http") || scheme.equals("s3")) {
+        if (scheme.startsWith("http") || scheme.equals("s3") || scheme.equals("hdfs")) {
             // Try streaming if http or s3 URLs rather than copying local
         	// and then reading (Passing an offset will get us an Reader
         	// that wraps a Stream).
